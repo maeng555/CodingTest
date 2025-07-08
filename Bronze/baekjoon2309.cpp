@@ -10,8 +10,8 @@ int main(){
     sort(a,a+9);
     do
     {
-       //for(int i : a) cout << i << " ";
-       //cout << "\n"; 디버깅 
+       for(int i : a) cout << i << " ";
+       cout << "\n";
        int sum = 0 ;
        for (int i = 0; i < 7; i++)
        {
