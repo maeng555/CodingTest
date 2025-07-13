@@ -3,7 +3,7 @@ using namespace std;
 
 int t,n;
 string a,b;
-
+ //문제가 경우의수이면 longlong으로 해야할 생각 가지기 
 int main(){
     cin >> t; // test case 
    
