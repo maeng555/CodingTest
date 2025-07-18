@@ -1,34 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n;
-string s, ori_s, pre, suf ;
+// ios_base::sync_with_stdio(false);
+//    cin.tie(NULL);
+//    cout.tie(NULL);
+//2와 5로 나누어 떨어지지 않는 정수 n(1 ≤ n ≤ 10000)가 주어졌을 때, 각 자릿수가 모두 1로만 이루어진 n의 배수를 찾는 프로그램을 작성하시오.
+typedef long long ll;
+int n ;
+
 int main(){
-    cin >> n; //개수
-    cin >> ori_s; //패턴
 
-    int pos = ori_s.find('*'); //find , substr , 
-
-    pre = ori_s.substr(0,pos);
-    suf = ori_s.substr(pos+1); // * 부터 쭈욱 
-
-    for (int i = 0; i < n; i++)
-    {
-       cin >> s; //n개 입력
-        if(pre.size()+suf.size()>s.size()){
-            cout << "NE" << "\n";  }
-        else{
-            if(pre == s.substr(0,pre.size()) && suf == s.substr(s.size()-suf.size())){
-                cout << "DA" << "\n";
-            }
-            else cout << "NE" << "\n";
-
-        }
-         
-     } 
-     return 0;
-
+  while(scanf("%d",&n)!= EOF){
+    ll cnt = 1; //현재값 
+    ll ret = 1; //자릿수
+    while(true){
+     
+      if(cnt % n == 0){
+        printf("%lld\n",ret);
+        break;
+      }else{
+        cnt = (cnt*10+1)%n;
+        ret ++;
+      }
     }
-    
+  }
+  return 0;
+  
 
-
-
+}
