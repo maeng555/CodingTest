@@ -13,9 +13,9 @@ void go(){
 	ret = "";  
 }
 bool cmp(string a, string b){
-	if(a.size() == b.size()) return a < b;
-	return a.size() < b.size();
-}
+	if(a.size() == b.size()) return a < b; //길이가 같으면 사전순
+	return a.size() < b.size(); //길이가 다르면 짧은순 
+} 
 int main () {
 	cin >> n; 
 	for(int i = 0; i < n; i++){
