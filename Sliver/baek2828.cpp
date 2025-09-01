@@ -24,7 +24,7 @@ int r;
 int l = 1;
 int ret, temp;
 int main(){
-    cin >> n >> m >> j;
+    cin >> n >> m >> j; // 칸  개수  - 바구니 크기 / 사과 떨어지는 개수 
     
     for(int i = 0; i < j; i++){
         cin >> temp;
