@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int n;  
+// 짝짓기 폭발 아름다운괄호는 스택 기반 문제풀이 
 string s; 
 bool check(string s){
 	stack<char> stk; 
