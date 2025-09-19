@@ -1,27 +1,53 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int n;
-string s;
-// (())())
-bool check(string s){
-    stack<char> stk;
-    for(char c : s){
-        if(c == '(') stk.push(c);
-        else{
-            if(!stk.empty()) stk.pop();
-            else return false;
-        }
-    }
-    return stk.empty();
-}
+//getline 공백까지 포함해서 한줄을 받을때
 int main(){
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> s;
-        if(check(s)) cout << "YES\n";
-        else cout << "NO\n";
-    }
-    
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    while(true){
+        string s;
+        getline(cin, s);
+        if(s==".") break;
+
+        stack<int> stk; //짝짓기 
+        bool check=true;
+
+        for (int i = 0; i < s.size(); i++)
+        {
+            if(s[i]=='('){
+                stk.push(s[i]);
+            }
+            if(s[i]=='['){
+                stk.push(s[i]);
+            }
+            if(s[i]==')'){
+                if(stk.size()==0 || stk.top()=='['){
+                    check=false;
+                    break;
+                }
+                else{
+                    stk.pop();
+                }
+            }
+            if(s[i]==']'){
+                if(stk.size()==0 || stk.top()=='('){
+                    
+                
+                    check=false;
+                        break;
+                }
+                else{
+                    stk.pop();
+                }
+            }
+            
+
+        }
+        if( check && stk.size() == 0)  cout << "yes\n";
+        else cout << "no\n";
+
+    };
+    return 0;
+
 }
